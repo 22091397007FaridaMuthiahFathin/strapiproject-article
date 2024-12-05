@@ -1,0 +1,32 @@
+{
+    "collectionName": "invite_tokens",
+    "info": {
+      "singularName": "invite-token",
+      "pluralName": "invite-tokens",
+      "displayName": "Invite Token"
+    },
+    "options": {
+      "timestamps": true
+    },
+    "attributes": {
+      "email": {
+        "type": "string",
+        "required": true
+      },
+      "token": {
+        "type": "string",
+        "required": true
+      },
+      "accepted": {
+        "type": "boolean",
+        "default": false
+      },
+      "user": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      }
+    }
+  }
+  
