@@ -1,4 +1,5 @@
-// src/api/user/customUser .ts
+/*
+// src/api/user/controllers/customUser .ts
 import { Context } from 'koa';
 
 export default {
@@ -17,3 +18,4 @@ export default {
     return entity;
   },
 };
+*/
