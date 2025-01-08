@@ -1,7 +1,7 @@
 # Cara Integrasi Project
 
 ### npm install
-Untuk menginstall keperluan package.json dari peoject
+Untuk menginstall keperluan package.json dari project
 
 ### npm run build
 Untuk build terbaru dari strapi agar project bisa berjalan
