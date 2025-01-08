@@ -1,5 +1,8 @@
 # Cara Integrasi Project
 
+## Lakukan clone project
+Caranya: git clone https://github.com/22091397007FaridaMuthiahFathin/strapiproject-article
+
 ## database
 Ketika selesai melakukan clone, copy semua yang ada di agendakota.db lalu ke localhost untuk xampp buat database baru bernama agendakota jika belum ada
 jika sudah ada maka klik database agendakota lalu ke bagian SQL dan paste semua yang ada di agendakota.db
