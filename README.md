@@ -1,5 +1,9 @@
 # Cara Integrasi Project
 
+## database
+Ketika selesai melakukan clone, copy semua yang ada di agendakota.db lalu ke localhost untuk xampp buat database baru bernama agendakota jika belum ada
+jika sudah ada maka klik database agendakota lalu ke bagian SQL dan paste semua yang ada di agendakota.db
+
 ## .env
 Ubah .env.example menjadi .env jika belum ada di dalam clone
 
