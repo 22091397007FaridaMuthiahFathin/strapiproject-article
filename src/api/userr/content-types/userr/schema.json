@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "userrs",
+  "info": {
+    "singularName": "userr",
+    "pluralName": "userrs",
+    "displayName": "User",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "role": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
