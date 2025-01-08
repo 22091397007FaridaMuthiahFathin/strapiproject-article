@@ -1,5 +1,8 @@
 # Cara Integrasi Project
 
+## .env
+Ubah .env.example menjadi .env jika belum ada di dalam clone
+
 ### npm install
 Untuk menginstall keperluan package.json dari project
 
