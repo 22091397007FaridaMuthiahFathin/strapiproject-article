@@ -26,6 +26,8 @@ module.exports = {
 
     // Send the invitation email
     const appUrl = strapi.config.get('server.url'); // Adjust your app URL
+
+    // ini nanti diganti URL front end tapi ttep terakhir e ?token=${token}}
     const invitationLink = `${appUrl}/auth/accept-invite?token=${token}`;
 
     await strapi.plugins['email'].services.email.send({

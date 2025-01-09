@@ -419,12 +419,17 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    picture: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
     title: Schema.Attribute.String;
@@ -530,34 +535,36 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiInviteInvite extends Struct.CollectionTypeSchema {
-  collectionName: 'invites';
+export interface ApiInviteTokenInviteToken extends Struct.CollectionTypeSchema {
+  collectionName: 'invite_tokens';
   info: {
-    description: 'Create invites for your content';
-    displayName: 'Invite';
-    pluralName: 'invites';
-    singularName: 'invite';
+    displayName: 'Invite Token';
+    pluralName: 'invite-tokens';
+    singularName: 'invite-token';
   };
   options: {
     draftAndPublish: false;
+    timestamps: true;
   };
   attributes: {
-    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    accepted: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.String;
+    email: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::invite.invite'
+      'api::invite-token.invite-token'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
+    token: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user: Schema.Attribute.String;
   };
 }
 
@@ -1071,7 +1078,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
-      'api::invite.invite': ApiInviteInvite;
+      'api::invite-token.invite-token': ApiInviteTokenInviteToken;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

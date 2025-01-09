@@ -41,6 +41,20 @@
     },
     "title": {
       "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "picture": {
+      "type": "text"
     }
   }
 }
